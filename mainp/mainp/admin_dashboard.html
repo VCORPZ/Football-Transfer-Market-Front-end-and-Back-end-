@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page - Manage Players and Agents</title>
+    <style>
+        body {
+            background-image: url('images/pl_completed_transfers.webp');
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            background-color: rgb(219, 77, 52);
+            color: #fff;
+            padding: 10px;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.5);
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Welcome Admin</h1>
+    </header>
+
+    <form action="create_user.php" method="post">
+        <h2>Create User</h2>
+
+        <label for="Username">Username:</label>
+        <input type="text" id="Username" name="Username" required>
+
+        <label for="Password">Password:</label>
+        <input type="Password" id="Password" name="Password" required>
+
+        <label for="Role">Role:</label>
+        <select id="Role" name="Role">
+            <option value="admin">Admin</option>
+            <option value="player">Player</option>
+            <option value="agent">Agent</option>
+            <!-- Add more role options as needed -->
+        </select>
+
+        <button type="submit">Create User</button>
+    </form>
+
+    <form action="add_players.php" method="post">
+        <h2>Add Player</h2>
+
+        <label for="playername">Player Name:</label>
+        <input type="text" id="playername" name="playername" required>
+
+        <label for="dateofbirth">Date of Birth:</label>
+        <input type="date" id="dateofbirth" name="dateofbirth" required>
+
+        <label for="nationality">Nationality:</label>
+        <input type="text" id="nationality" name="nationality" required>
+
+        <label for="position">Position:</label>
+        <input type="text" id="position" name="position" required>
+
+        <label for="height">Height:</label>
+        <input type="text" id="height" name="height" required>
+
+        <label for="weight">Weight:</label>
+        <input type="text" id="weight" name="weight" required>
+
+        <label for="clubid">Club ID:</label>
+        <input type="text" id="clubid" name="clubid" required>
+
+        <button type="submit">Add Player</button>
+    </form>
+
+    <form action="add_agents.php" method="post">
+        <h2>Add Agent</h2>
+
+        <label for="agentname">Agent Name:</label>
+        <input type="text" id="agentname" name="agentname" required>
+
+        <label for="contactnumber">Contact No:</label>
+        <input type="text" id="contactnumber" name="contactnumber" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <button type="submit">Add Agent</button>
+    </form>
+
+    <h2>Database Actions</h2>
+
+    <button type="button" onclick="window.location.href='view_players.php?table=players'">View Players Table</button>
+    <button type="button" onclick="window.location.href='view_agents.php?table=agents'">View Agents Table</button>
+    <button type="button" onclick="window.location.href='view_clubs.php?table=clubs'">View Clubs Table</button>
+    <button type="button" onclick="window.location.href='view_transfers.php?table=transfers'">View Transfers Table</button>
+    <button type="button" onclick="window.location.href='view_users.php?table=users'">View Users</button>
+</body>
+</html>
